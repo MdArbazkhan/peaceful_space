@@ -1,0 +1,37 @@
+{% extends 'manage_places/base.html' %}
+{% load static %}
+
+{% block css_content %}
+<title>Places where you can find inner peace</title>
+<link rel="stylesheet" href="{% static 'manage_places/css/landing-page.css' %}">
+{% endblock %}
+
+{% block main_wrapper_content %}
+<div class="main-wrapper">
+    <div class="app-landing-title">
+        <p><span class="app-landing-title-bold">Places</span> where you can <span class="app-landing-title-bold">Find Inner Peace</span> for <span class="app-landing-title-bold">Yourself</span></p>
+    </div>
+    <div class="places-search-wrapper">
+        <p>Select your city</p>
+        <form class="place-search-form" action="{% url 'landing-page' %}" method="POST">
+            {% csrf_token %}
+            <select name="city" class="select-cities">
+                <option value="Jamshedpur">Jamshedpur</option>
+                <option value="Ranchi">Ranchi</option>
+                <option value="Dhanbad">Dhanbad</option>
+                <option value="Patna">Patna</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Pune">Pune</option>
+                <option value="New Delhi">New Delhi</option>
+                <option value="Bangalore">Bangalore</option>
+            </select>
+            <div class="search-place-btn">
+                <button>Search Peaceful Places</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

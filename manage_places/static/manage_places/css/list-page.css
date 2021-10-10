@@ -1,0 +1,225 @@
+.main-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px;
+    box-sizing: border-box;
+}
+
+/* app landing page title section */
+.app-landing-title{
+    width: 400px;
+}
+.app-landing-title p{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 45px;
+    font-weight: 500;
+    color: #044436;
+}
+.app-landing-title-bold{
+    color: #23CBA7;
+    font-size: 30px;
+    font-weight: 550;
+}
+/* 404 no place found */
+.error-no-place{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(35, 203, 167, 0.05);
+    padding: 30px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+.error-no-place p{
+    font-size: 14px;
+    line-height: 22px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #044436;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* new place approval title section */
+.new-approval-title{
+    width: 400px;
+}
+.new-approval-title p{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #044436;
+}
+/* confirmation greetings wrapper */
+.confirm-new-wrapper{
+    width: 400px;
+}
+.confirm-new-wrapper p{
+    font-size: 30px;
+    color: #23CBA7;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    margin: 15px 0;
+}
+/* policy wrapper */
+.policy-wrapper{
+    width: 400px;
+}
+.policy-wrapper p{
+    font-size: 16px;
+    color: #044436;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    line-height: 25px;
+}
+
+/*places list */
+.places-list-wrapper{
+    width: 400px;
+}
+.places-list-item{
+    display: flex;
+    align-items: center;
+    background: rgba(35, 203, 167, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+}
+.places-upvote{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.places-upvote-number{
+    font-size: 18px;
+    font-family: 'Roboto','sans-serif';
+    font-weight: bold;
+}
+.places-upvote img{
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.places-meta-data{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', 'sans-serif';
+}
+.places-name{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.places-type{
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.places-gmap{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+.places-gmap a{
+    font-size: 14px;
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 500;
+    color:  #2483CC;
+}
+.places-gmap img{
+    width: 20px;
+    height: 20px;
+}
+.places-main-image{
+    width: 40%;
+}
+.places-main-image img{
+    width: 100%;
+    border-radius: 10px;
+}
+/* approval buttons */
+.approval-btn-form-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.approval-form-reject , .approval-form-accept{
+    width: 48%;
+}
+.approval-form-reject button{
+    width: 100%;
+    height: 40px;
+    background: #F15E5E;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Roboto', 'sans-serif';
+}
+.approval-form-reject button:hover{
+    background-color: #c02b2b;
+    cursor: pointer;
+    transition: 0.1s ease-out;
+}
+.approval-form-accept button{
+    width: 100%;
+    height: 40px;
+    background: #2E982C;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Roboto', 'sans-serif';
+}
+.approval-form-accept button:hover{
+    background-color: #166b14;
+    cursor: pointer;
+    transition: 0.1s ease-out;
+}
+
+@media screen and (max-width: 600px){
+    .main-wrapper{
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    .app-landing-title{
+        width: 100%;
+    }
+    .new-approval-title{
+        width: 100%;
+    }
+    .confirm-new-wrapper{
+        width: 100%;
+    }
+    .policy-wrapper{
+        width: 100%;
+    }
+    .places-list-wrapper{
+        width: 100%;
+    }
+    .places-name{
+        font-size: 15px;
+    }
+    .places-type{
+        font-size: 13px;
+    }
+    .places-gmap a{
+        font-size: 12px;
+    }
+
+    .approval-btn-form-wrapper{
+        width: 100%;
+    }
+}

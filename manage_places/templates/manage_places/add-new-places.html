@@ -1,0 +1,60 @@
+{% extends 'manage_places/base.html' %}
+{% load static %}
+
+
+{% block css_content %}
+<title>Add a new Peaceful PLace</title>
+<link rel="stylesheet" href="{% static 'manage_places/css/add-new-places.css' %}">
+{% endblock %}
+
+
+
+{% block main_wrapper_content %}
+<div class="main-wrapper">
+    <div class="app-landing-title">
+        <p>Add your Peaceful place</p>
+    </div>
+    {% if alert_flag %}
+    <div class="alert-div">
+        <p>{{ alert_msg }}</p>
+    </div>
+    {% endif %}
+    <div class="new-place-form-wrapper">
+        <form class="new-place-form" action="{% url 'add-new-places' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %} 
+            <input class="place-input-field" type="text" name="enter-place-name" placeholder="Enter place name" required>
+            <br>
+            <!-- <input class="place-input-field" type="text" name="select-place-type" placeholder="Select place type" required>
+            <br> -->
+            <select name="select-place-type" class="select-cities">
+                <option value="None">Select place type</option>
+                <option value="Public Park">Public Park</option>
+                <option value="Private Park">Private Park</option>
+                <option value="Lake \ Hill">Lake \ Hill</option>
+                <option value="Forest \ Mountain">Forest \ Mountain</option>
+            </select>
+            <br>
+            <select name="city" class="select-cities">
+                <option value="None">Select the city</option>
+                <option value="Jamshedpur">Jamshedpur</option>
+                <option value="Ranchi">Ranchi</option>
+                <option value="Dhanbad">Dhanbad</option>
+                <option value="Patna">Patna</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Pune">Pune</option>
+                <option value="New Delhi">New Delhi</option>
+                <option value="Bangalore">Bangalore</option>
+            </select>
+            <br>
+            <input class="place-input-field upload-image" type="file" name="image-file" required/>
+            <br>
+            <input class="place-input-field" type="text" name="gmap-link" placeholder="Paste google map link" required>
+            <br>
+            <button class="add-new-btn">Add new peaceful place</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

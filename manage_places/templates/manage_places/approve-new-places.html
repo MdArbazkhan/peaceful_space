@@ -1,0 +1,52 @@
+{% extends 'manage_places/base.html' %}
+{% load static %}
+
+
+{% block css_content %}
+<title>Superuser approval page</title>
+<link rel="stylesheet" href="{% static 'manage_places/css/list-page.css' %}">
+{% endblock %}
+
+
+
+{% block main_wrapper_content %}
+<div class="main-wrapper">
+    <div class="new-approval-title">
+        <p>Places which required approval</p>
+    </div>
+    <div class="places-list-wrapper">
+        {% for place_obj in places_list %}
+        <div class="places-list-item">
+            <div class="places-upvote">
+                <p class="places-upvote-number">{{ place_obj.place_upvote }}</p>
+                <img src="https://ik.imagekit.io/arbaz/icons/up-arrows-65_gmvbKDGSOi1.png?updatedAt=1633289948968"/>
+            </div>
+            <div class="places-meta-data">
+                <p class="places-name">{{ place_obj.place_name }}</p>
+                <p class="places-type">{{ place_obj.city_name }}</p>
+                <p class="places-type">{{ place_obj.place_type }}</p>
+                <div class="places-gmap">
+                    <img src="https://ik.imagekit.io/arbaz/icons/google-maps-48_FWo_qGG5vgK.png?updatedAt=1633290146471">
+                    <a href="{{ place_obj.map_url }}" target="blank">check on gmaps</a>
+                </div>
+            </div>
+            <div class="places-main-image">
+                <img src="{{ place_obj.image_url }}" alt="jubilee-park">
+            </div>
+        </div>
+        <div class="approval-btn-form-wrapper">
+            <form class="approval-form-reject" action="{% url 'reject-place' place_obj.place_id %}" method="POST">
+                {% csrf_token %} 
+                <button>Reject</button>
+            </form>
+            <form class="approval-form-accept" action="{% url 'accept-place' place_obj.place_id %}" method="POST">
+                {% csrf_token %} 
+                <button>Accept</button>
+            </form>
+        </div>
+        {% endfor %}
+
+        
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'manage_places/base.html' %}
+{% load static %}
+
+
+{% block css_content %}
+<title>Peaceful Places in {{ city_name }}</title>
+<link rel="stylesheet" href="{% static 'manage_places/css/list-page.css' %}">
+{% endblock %}
+
+{% block main_wrapper_content %}
+<div class="main-wrapper">
+    <div class="app-landing-title">
+        <p>Peaceful Places in <br><span class="app-landing-title-bold">{{ city_name }}</span></p>
+    </div>
+    {% if alert_flag %}
+    <div class="error-no-place">
+        <img src="https://ik.imagekit.io/arbaz/icons/icons8-error-cloud-64_jFsL2uXVFj-.png?updatedAt=1633720342366"/>
+        <p>No Peaceful Place found with this city name or the city name is invalid</p>
+    </div>
+    {% endif %}
+    <div class="places-list-wrapper">
+        <!-- dynamic items -->
+        {% for place in place_list %}
+        <div class="places-list-item">
+            <div class="places-upvote">
+                <p class="places-upvote-number" id="{{ place.place_id }}">{{ place.place_upvote }}</p>
+                <img onclick="upvoteMethod('{{ place.place_id }}')" src="https://ik.imagekit.io/arbaz/icons/up-arrows-65_gmvbKDGSOi1.png?updatedAt=1633289948968"/>
+            </div>
+            <div class="places-meta-data">
+                <p class="places-name">{{ place.place_name }}</p>
+                <p class="places-type">{{ place.place_type }}</p>
+                <div class="places-gmap">
+                    <img src="https://ik.imagekit.io/arbaz/icons/google-maps-48_FWo_qGG5vgK.png?updatedAt=1633290146471">
+                    <a href="{{ place.map_url }}" target="blank">check on gmaps</a>
+                </div>
+            </div>
+            <div class="places-main-image">
+                <img src="{{ place.image_url }}" alt="{{ place.place_name }}">
+            </div>
+        </div>
+        {% endfor %}
+
+        <script type="text/javascript">
+            const upvoteMethod = (place_id) => {
+                const xhttp = new XMLHttpRequest();
+                xhttp.open("GET", "/upvote?place_id="+place_id  , true)
+                xhttp.send();
+                const upvoteNum = document.getElementById(place_id)
+                const currentCount = Number(upvoteNum.innerHTML)
+                upvoteNum.innerHTML = currentCount+1
+            }
+        </script>
+
+
+
+
+<!-- 
+
+        <div class="places-list-item">
+            <div class="places-upvote">
+                <p class="places-upvote-number">237</p>
+                <img src="https://ik.imagekit.io/arbaz/icons/up-arrows-65_gmvbKDGSOi1.png?updatedAt=1633289948968"/>
+            </div>
+            <div class="places-meta-data">
+                <p class="places-name">Jubilee Park Sakchi</p>
+                <p class="places-type">Public Park</p>
+                <div class="places-gmap">
+                    <img src="https://ik.imagekit.io/arbaz/icons/google-maps-48_FWo_qGG5vgK.png?updatedAt=1633290146471">
+                    <a href="x">check on gmaps</a>
+                </div>
+            </div>
+            <div class="places-main-image">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/e2/a5/9a/jubilee-park.jpg" alt="jubilee-park">
+            </div>
+        </div>
+
+        <div class="places-list-item">
+            <div class="places-upvote">
+                <p class="places-upvote-number">237</p>
+                <img src="https://ik.imagekit.io/arbaz/icons/up-arrows-65_gmvbKDGSOi1.png?updatedAt=1633289948968"/>
+            </div>
+            <div class="places-meta-data">
+                <p class="places-name">Modi Park</p>
+                <p class="places-type">Public Park</p>
+                <div class="places-gmap">
+                    <img src="https://ik.imagekit.io/arbaz/icons/google-maps-48_FWo_qGG5vgK.png?updatedAt=1633290146471">
+                    <a href="x">check on gmaps</a>
+                </div>
+            </div>
+            <div class="places-main-image">
+                <img src="https://assets.telegraphindia.com/telegraph/2020/Oct/1602348683_10jampark-3.jpg" alt="jubilee-park">
+            </div>
+        </div>
+
+        <div class="places-list-item">
+            <div class="places-upvote">
+                <p class="places-upvote-number">237</p>
+                <img src="https://ik.imagekit.io/arbaz/icons/up-arrows-65_gmvbKDGSOi1.png?updatedAt=1633289948968"/>
+            </div>
+            <div class="places-meta-data">
+                <p class="places-name">Zoo Lake</p>
+                <p class="places-type">Public Park</p>
+                <div class="places-gmap">
+                    <img src="https://ik.imagekit.io/arbaz/icons/google-maps-48_FWo_qGG5vgK.png?updatedAt=1633290146471">
+                    <a href="x">check on gmaps</a>
+                </div>
+            </div>
+            <div class="places-main-image">
+                <img src="https://assets.telegraphindia.com/telegraph/b631fb08-a14a-4f44-a51d-601d724b8501.JPG" alt="jubilee-park">
+            </div>
+        </div> -->
+    </div>
+</div>
+{% endblock %}

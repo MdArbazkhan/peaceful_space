@@ -1,0 +1,92 @@
+
+.main-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px;
+    box-sizing: border-box;
+}
+
+/* app landing page title section */
+.app-landing-title{
+    width: 400px;
+}
+.app-landing-title p{
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 50px;
+    font-weight: 500;
+    color: #044436;
+}
+.app-landing-title-bold{
+    color: #23CBA7;
+    font-size: 35px;
+    font-weight: 550;
+}
+
+/* places search form section */
+.places-search-wrapper{
+    width: 400px;
+    margin: 30px 0px;
+}
+.places-search-wrapper p{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #011713;
+    padding: 15px 0px;
+}
+
+/* search form */
+.place-search-form{
+    width: 100%;
+}
+.select-cities{
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background-color: rgba(35, 203, 167, 0.17);
+    border: 0;
+    border-radius: 8px;
+    text-align: center;
+    padding: 12px;
+}
+.select-cities:focus{
+    outline: none;
+}
+.search-place-btn{
+    margin: 20px 0px;
+}
+.search-place-btn button{
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #23CBA7;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.11);
+}
+.search-place-btn button:hover{
+    background-color: #0fa383;
+    cursor: pointer;
+    transition: 0.1s ease-out;
+}
+
+
+@media screen and (max-width: 600px){
+    .main-wrapper{
+        padding: 30px;
+        box-sizing: border-box;
+    }
+    .app-landing-title{
+        width: 100%;
+    }
+    .places-search-wrapper{
+        width: 100%;
+    }
+}
