@@ -11,3 +11,13 @@ Python, Django
 Imagekit
 
 ## Screenshots
+#### Landing Page
+<img src="https://github.com/MdArbazkhan/peaceful_space/blob/main/screenshots/Screenshot%20from%202022-09-20%2012-41-53.png" width="100%"/>
+
+#### Places list
+
+#### List new place
+
+#### Approve the Listing
+
+#### Admin side 
