@@ -15,9 +15,12 @@ Imagekit
 <img src="https://github.com/MdArbazkhan/peaceful_space/blob/main/screenshots/Screenshot%20from%202022-09-20%2012-41-53.png" width="100%"/>
 
 #### Places list
+<img src="https://raw.githubusercontent.com/MdArbazkhan/peaceful_space/main/screenshots/Screenshot%20from%202022-09-20%2012-42-12.png" width="100%"/>
 
 #### List new place
+<img src="https://github.com/MdArbazkhan/peaceful_space/blob/main/screenshots/Screenshot%20from%202022-09-20%2012-42-20.png" width="100%"/>
 
 #### Approve the Listing
+<img src="https://github.com/MdArbazkhan/peaceful_space/blob/main/screenshots/Screenshot%20from%202022-09-20%2012-45-53.png" width="100%"/>
 
 #### Admin side 
