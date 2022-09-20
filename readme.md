@@ -21,6 +21,7 @@ Imagekit
 <img src="https://github.com/MdArbazkhan/peaceful_space/blob/main/screenshots/Screenshot%20from%202022-09-20%2012-42-20.png" width="100%"/>
 
 #### Approve the Listing
+Only admin can approve the listing. 
 <img src="https://github.com/MdArbazkhan/peaceful_space/blob/main/screenshots/Screenshot%20from%202022-09-20%2012-45-53.png" width="100%"/>
 
 #### Admin side 
